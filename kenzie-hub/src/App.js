@@ -1,7 +1,7 @@
 import { GlobalStyle } from "./GlobalStyles";
 import { DashBoard } from "./Pages/DashBoard";
-import { Login } from "./Pages/Login";
-import { Register } from "./Pages/Register";
+
+import { RoutesMain as Routes } from "./Routers";
 
 function App() {
   return (
@@ -11,7 +11,9 @@ function App() {
 
       {/*<Login/>*/}
 
-      <DashBoard/>
+      <Routes />
+
+     
     </>
   );
 }

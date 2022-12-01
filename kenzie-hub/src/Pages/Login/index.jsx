@@ -1,5 +1,6 @@
 import { FormLogin } from "../../Components/FormLogin";
 import { StyledContainerLogin, StyledDatasForm, StyledRegister } from "./style";
+import {Link} from "react-router-dom"
 
 export const Login = () => {
   return (
@@ -12,7 +13,7 @@ export const Login = () => {
           <StyledRegister>
             <small>Ainda não possui uma conta?</small>
 
-            <button>Cadastre-se</button>
+            <Link to={"register"}>Cadastre-se</Link>
           </StyledRegister>
         </StyledDatasForm>
       </StyledContainerLogin>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FormRegister } from "../../Components/FormRegister";
 import {
   StyledContainer,
@@ -13,7 +14,7 @@ import {
         <StyledCenterContent>
           <StyledMenu>
             <h1>Kenzie Hub</h1>
-            <button>Voltar</button>
+            <Link to={"/"}>Voltar</Link>
           </StyledMenu>
           <StyledContainerForm>
             <h3>Crie sua conta</h3>

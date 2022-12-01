@@ -43,7 +43,11 @@ export const StyledRegister = styled.div`
     color: var(--grey-1);
     margin-bottom: 42px;
   }
-  button {
+  a {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-decoration: none;
     height: 48px;
     border: none;
     border-radius: var(--radius-1);
