@@ -7,9 +7,6 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      {/*<Register /> */}
-
-      {/*<Login/>*/}
 
       <Routes />
 

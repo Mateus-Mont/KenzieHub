@@ -2,10 +2,11 @@ import { StyledFormDatas } from "./style";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formSchema } from "./formScheme";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Api } from "../../Services/api.js";
 
 export const FormRegister = () => {
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -17,7 +18,8 @@ export const FormRegister = () => {
   async function onSubmitFunction(formData) {
     try {
       const response = await Api.post("users", formData);
-      console.log(response);
+    response.status === 201 && navigate("/")
+    
     } catch (error) {
       console.log(error);
     }
@@ -44,6 +46,7 @@ export const FormRegister = () => {
           {errors.password?.message && <small>{errors.password.message}</small>}
           <label htmlFor="">Confirmar Senha</label>
           <input
+          type="password"
             placeholder="Digite aqui novamente sua senha"
             {...register("passwordConfirmation")}
           />

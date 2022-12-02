@@ -16,9 +16,7 @@ export const StyledMenu = styled.header`
   display: flex;
   justify-content: space-between;
 
-  h1 {
-    color: var(--color-primary);
-  }
+
   a {
     font-size: 12px;
     text-decoration: none;

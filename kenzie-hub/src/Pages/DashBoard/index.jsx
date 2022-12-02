@@ -1,21 +1,14 @@
 import { DatasDashBoard } from "../../Components/DatasDashBoard";
-import {
-  
-  StyledContainerHeader,
-  StyledNavUser,
-} from "./style";
+import { HeaderHome } from "./HeaderHome";
+import { StyledContainerHeader,} from "./style";
 
 export const DashBoard = () => {
   return (
     <>
       <StyledContainerHeader>
-        <StyledNavUser>
-          <h2>Kenzie Hub</h2>
-          <button>Sair</button>
-        </StyledNavUser>
+        <HeaderHome />
       </StyledContainerHeader>
-
-      <DatasDashBoard/>
+      <DatasDashBoard />
     </>
   );
 };

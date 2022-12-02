@@ -8,12 +8,7 @@ export const StyledContainerLogin = styled.div`
   margin: 0 auto;
   height: 100vh;
 
-  h1 {
-    color: var(--color-primary);
-    width: 100%;
-    text-align: center;
-    padding-bottom: 20px;
-  }
+
 `;
 
 export const StyledDatasForm = styled.div`
@@ -30,12 +25,12 @@ export const StyledDatasForm = styled.div`
   }
 `;
 
-
-
 export const StyledRegister = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0px 22px 42px 22px;
+  background-color: var(--grey-3);
+  border-radius: var(--radius-1);
 
   small {
     width: 100%;

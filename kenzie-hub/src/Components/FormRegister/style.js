@@ -31,7 +31,7 @@ export const StyledFormDatas = styled.div`
     }
 
     small {
-      color: #b91b1b;
+      color: var(--color-primary);
       font-size: 13px;
      
     }

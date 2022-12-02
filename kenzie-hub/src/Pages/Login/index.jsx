@@ -1,12 +1,13 @@
 import { FormLogin } from "../../Components/FormLogin";
 import { StyledContainerLogin, StyledDatasForm, StyledRegister } from "./style";
 import {Link} from "react-router-dom"
+import { HeaderLogin } from "./HeaderLogin/header";
 
 export const Login = () => {
   return (
     <>
       <StyledContainerLogin>
-        <h1>Kenzie Hub</h1>
+       <HeaderLogin/>
         <StyledDatasForm>
           <h3>Login</h3>
           <FormLogin />

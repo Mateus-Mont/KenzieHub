@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FormRegister } from "../../Components/FormRegister";
+import { HeaderRegister } from "./HeaderRegister";
 import {
   StyledContainer,
   StyledCenterContent,
@@ -13,7 +14,7 @@ import {
       <StyledContainer>
         <StyledCenterContent>
           <StyledMenu>
-            <h1>Kenzie Hub</h1>
+           <HeaderRegister/>
             <Link to={"/"}>Voltar</Link>
           </StyledMenu>
           <StyledContainerForm>
