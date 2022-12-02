@@ -18,8 +18,8 @@ export const formSchema = () => {
       .oneOf([yup.ref("password"), null], "A senha deve corresponder"),
 
     bio: yup.string().required("Campo obrigatório"),
-    contact: yup.string().required("Contato obrigatório"),
-    course_module: yup.string().required("Módulo obrigatório"),
+    contact: yup.string().required("Campo obrigatório"),
+    course_module: yup.string().required("Campo obrigatório"),
   });
   return schema;
 };
