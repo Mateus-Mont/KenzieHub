@@ -15,6 +15,7 @@ export const StyledDatasForm = styled.div`
   height: 540px;
   background-color: var(--grey-3);
   border-radius: var(--radius-1);
+  margin-top: 20px;
 
   h3 {
     width: 100%;
@@ -22,6 +23,7 @@ export const StyledDatasForm = styled.div`
     padding-top: 40px;
     padding-bottom: 40px;
     color: var(--grey-0);
+   
   }
 `;
 

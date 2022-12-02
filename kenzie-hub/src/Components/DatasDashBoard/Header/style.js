@@ -8,6 +8,7 @@ export const StyledHeaderHome=styled.div`
   width: 1200px;
   margin: 0 auto;
   height: 72px;
+ 
 
   h2 {
     color: var(--color-primary);

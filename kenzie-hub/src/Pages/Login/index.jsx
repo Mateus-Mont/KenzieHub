@@ -1,13 +1,13 @@
 import { FormLogin } from "../../Components/FormLogin";
 import { StyledContainerLogin, StyledDatasForm, StyledRegister } from "./style";
-import {Link} from "react-router-dom"
-import { HeaderLogin } from "./HeaderLogin/header";
+import { Link } from "react-router-dom";
+import { Header } from "../../Components/Header";
 
 export const Login = () => {
   return (
     <>
       <StyledContainerLogin>
-       <HeaderLogin/>
+        <Header />
         <StyledDatasForm>
           <h3>Login</h3>
           <FormLogin />
