@@ -1,4 +1,4 @@
-import { FormLogin } from "../../Components/FormLogin";
+import { FormLogin } from "./FormLogin/index";
 import { StyledContainerLogin, StyledDatasForm, StyledRegister } from "./style";
 import { Link } from "react-router-dom";
 import { Header } from "../../Components/Header";

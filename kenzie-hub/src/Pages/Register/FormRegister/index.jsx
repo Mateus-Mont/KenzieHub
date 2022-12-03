@@ -3,10 +3,12 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formSchema } from "./formScheme";
 import { useNavigate } from "react-router-dom";
-import { Api } from "../../Services/api.js";
+import { Api } from "../../../Services/api.js";
+import { Input } from "../../../Components/Input";
+import { ButtonForm } from "../../../Components/ButtonForm";
 
 export const FormRegister = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -18,8 +20,7 @@ export const FormRegister = () => {
   async function onSubmitFunction(formData) {
     try {
       const response = await Api.post("users", formData);
-    response.status === 201 && navigate("/")
-    
+      response.status === 201 && navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -30,36 +31,60 @@ export const FormRegister = () => {
       <StyledFormDatas>
         <form noValidate onSubmit={handleSubmit(onSubmitFunction)}>
           <label htmlFor="">Nome</label>
-          <input placeholder="Digite aqui seu nome" {...register("name")} />
+          <Input
+            type="text"
+            id="name"
+            register={register("name")}
+            placeholder="Digite aqui seu nome..."
+          />
           {errors.name?.message && <small>{errors.name.message}</small>}
 
           <label htmlFor="">Email</label>
-          <input placeholder="Digite aqui seu  email" {...register("email")} />
+          <Input
+            type="text"
+            id="email"
+            register={register("email")}
+            placeholder="Digite aqui seu email..."
+          />
           {errors.email?.message && <small>{errors.email.message}</small>}
 
           <label htmlFor="">Senha</label>
-          <input
+          <Input
             type="password"
-            placeholder="Digite aqui seua senha"
-            {...register("password")}
+            id="password"
+            register={register("password")}
+            placeholder="Crie sua senha"
           />
           {errors.password?.message && <small>{errors.password.message}</small>}
+
           <label htmlFor="">Confirmar Senha</label>
-          <input
-          type="password"
+          <Input
+            type="password"
+            id="passwordConfirm"
+            register={register("passwordConfirmation")}
             placeholder="Digite aqui novamente sua senha"
-            {...register("passwordConfirmation")}
           />
+
           {errors.passwordConfirmation?.message && (
             <small>{errors.passwordConfirmation.message}</small>
           )}
 
           <label htmlFor="">Bio</label>
-          <input placeholder="Fale sobre você" {...register("bio")} />
+          <Input
+            type="text"
+            id="bio"
+            register={register("bio")}
+            placeholder="Fale sobre você"
+          />
           {errors.bio?.message && <small>{errors.bio.message}</small>}
 
           <label htmlFor="">Contato</label>
-          <input placeholder="Opção de contato" {...register("contact")} />
+          <Input
+            type="text"
+            id="contact"
+            register={register("cantact")}
+            placeholder="Opçãode de contato"
+          />
           {errors.contact?.message && <small>{errors.contact.message}</small>}
 
           <label htmlFor="">Selecionar módulo</label>
@@ -78,7 +103,7 @@ export const FormRegister = () => {
             <small>{errors.course_module.message}</small>
           )}
 
-          <button type="submit">Cadastrar</button>
+          <ButtonForm name="Cadastrar"/>
         </form>
       </StyledFormDatas>
     </>

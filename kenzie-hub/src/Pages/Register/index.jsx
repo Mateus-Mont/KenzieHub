@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FormRegister } from "../../Components/FormRegister";
+import { FormRegister } from "./FormRegister";
 import { Header } from "../../Components/Header";
 import {
   StyledContainer,

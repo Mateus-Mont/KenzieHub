@@ -14,8 +14,16 @@ body{
 
 
 }
-input{
-  
+fieldset{
+  width: 100%;
+    height: 48px;
+    border-radius: var(--radius-1);
+    outline: none;
+    background-color: var(--grey-2);
+    border: none;
+    color: var(--grey-0);
+ }
+ input{
     height: 48px;
     border-radius: var(--radius-1);
     padding-left: 10px;
@@ -23,6 +31,7 @@ input{
     background-color: var(--grey-2);
     border: none;
     color: var(--grey-0);
+    width: 100%;
  }
  button{
     font-family: 'Inter', sans-serif;
