@@ -3,25 +3,29 @@ import { useEffect, useState } from "react";
 import { Api } from "../../../Services/api";
 
 export const DatasDashBoard = () => {
-  async function getProfile() {
-    try {
-      const response = await Api.get(`profile`, {
-          
-      });
+  const [dataUse, setDatUse] = useState([]);
 
-     
-    } catch (erro) {
-      console.log(erro);
+  useEffect(() => {
+    async function getProfile() {
+      const token = localStorage.getItem("token");
+      try {
+        const response = await Api.get(`profile`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setDatUse(response.data);
+      } catch (erro) {
+        console.log(erro);
+      }
     }
-  }
-  getProfile();
+    getProfile();
+  }, []);
 
   return (
     <>
       <StyledContainerDatasUser>
         <div>
-          <h2>Olá, Samuel Leão</h2>
-          <small>Primeiro módulo </small>
+          <h2>Olá, {dataUse.name}</h2>
+          <small>{dataUse.course_module} </small>
         </div>
       </StyledContainerDatasUser>
     </>

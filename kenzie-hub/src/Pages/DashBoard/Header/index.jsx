@@ -4,7 +4,7 @@ export const HeaderHome = () => {
   return (
     <StyledHeaderHome>
       <h2>Kenzie Hub</h2>
-      <button>Sair</button>
+      <button >Sair</button>
     </StyledHeaderHome>
   );
 };
