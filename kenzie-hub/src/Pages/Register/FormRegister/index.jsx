@@ -83,12 +83,12 @@ export const FormRegister = () => {
             type="text"
             id="contact"
             register={register("cantact")}
-            placeholder="Opçãode de contato"
+            placeholder="Opção de contato"
           />
           {errors.contact?.message && <small>{errors.contact.message}</small>}
 
           <label htmlFor="">Selecionar módulo</label>
-          <select name="" id="" {...register("course_module")}>
+          <select {...register("course_module")}>
             <option value="" hidden>
               Selecionar módulo
             </option>

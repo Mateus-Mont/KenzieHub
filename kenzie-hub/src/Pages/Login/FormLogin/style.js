@@ -24,4 +24,5 @@ export const StyledFormLogin = styled.div`
       font-size: 13px;
     }
   }
+
 `;

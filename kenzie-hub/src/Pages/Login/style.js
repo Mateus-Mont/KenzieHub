@@ -9,6 +9,14 @@ export const StyledContainerLogin = styled.div`
   height: 100vh;
 
 
+  @media(max-width: 1024px){
+    width: 50%;
+  }
+  @media(max-width:493px){
+    width: 90%;
+  }
+
+
 `;
 
 export const StyledDatasForm = styled.div`

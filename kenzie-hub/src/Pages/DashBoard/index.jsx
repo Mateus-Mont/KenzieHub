@@ -1,5 +1,5 @@
-import { DatasDashBoard } from "../../Components/DatasDashBoard";
-import { HeaderHome } from "../../Components/DatasDashBoard/Header";
+import { DatasDashBoard } from "./DatasDashBoard";
+import { HeaderHome } from "./Header";
 import { StyledContainerHeader,} from "./style";
 
 export const DashBoard = () => {

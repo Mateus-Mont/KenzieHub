@@ -10,6 +10,13 @@ export const StyledCenterContent = styled.div`
   width: 26%;
   margin: 0 auto;
   padding-top: 50px;
+
+  @media(max-width: 1024px){
+    width: 50%;
+  }
+  @media(max-width:493px){
+    width: 90%;
+  }
 `;
 
 export const StyledMenu = styled.header`

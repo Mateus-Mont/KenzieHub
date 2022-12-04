@@ -23,6 +23,15 @@ export const StyledHeaderHome=styled.div`
     border-radius: var(--radius-1);
   }
 
+  
+
+  @media(max-width: 1200px){
+  
+    width: 95%;
+  }
+  @media(max-width:493px){
+    width: 90%;
+  }
 
 
 `
