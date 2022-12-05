@@ -82,7 +82,7 @@ export const FormRegister = () => {
           <Input
             type="text"
             id="contact"
-            register={register("cantact")}
+            register={register("contact")}
             placeholder="Opção de contato"
           />
           {errors.contact?.message && <small>{errors.contact.message}</small>}
