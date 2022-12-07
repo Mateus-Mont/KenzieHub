@@ -47,6 +47,7 @@ fieldset{
     --grey-4:#121214;
     --grey-3:#212529;
     --grey-2:#343b41;
+    --gry-2-opc:#212529;
     --grey-1:#868e96;
     --grey-0:#f8f9fa;
 

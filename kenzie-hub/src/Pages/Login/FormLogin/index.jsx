@@ -6,10 +6,13 @@ import { Api } from "../../../Services/api";
 import { useNavigate } from "react-router-dom";
 import { Input } from "../../../Components/Input/index.jsx";
 import { ButtonForm } from "../../../Components/ButtonForm/index.jsx";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { DatasUserContext } from "../../../Contexts/index.jsx";
 
 export const FormLogin = () => {
-  const navigate = useNavigate();
+const {onSubmitFunction}=useContext(DatasUserContext)
+
+  
   const {
     register,
     handleSubmit,
@@ -18,18 +21,7 @@ export const FormLogin = () => {
     resolver: yupResolver(formSchema()),
   });
 
-  async function onSubmitFunction(formData) {
-    try {
-      const response = await Api.post("sessions", formData);
-      response.status === 200 && navigate(`home`);
 
-      window.localStorage.setItem("token", response.data.token);
-     
-    } catch (error) {
-   
-     console.log(error)
-    }
-  }
 
   return (
     <StyledFormLogin>

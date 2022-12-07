@@ -1,7 +1,7 @@
-export const ButtonForm = ({name}) => {
+export const ButtonForm = ({name,onClick}) => {
   return (
     <>
-      <button type="submit">{name}</button>
+      <button onClick={onClick} type="submit">{name}</button>
     </>
   );
 };
