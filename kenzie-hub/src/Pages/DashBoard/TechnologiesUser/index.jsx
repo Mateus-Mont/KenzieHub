@@ -5,9 +5,10 @@ import Vector from "../../../assets/Vector.svg";
 import { StyledCardTechnologies } from "./style";
 import { StyledNivel } from "./style";
 
-export const TechnologiesUser = () => {
+export const TechnologiesUser = ({techs}) => {
 
-  const { techs } = useContext(DatasUserContext);
+
+
 
 
   return (

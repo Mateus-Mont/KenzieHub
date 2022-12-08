@@ -6,8 +6,11 @@ export const StyledContainerHeader = styled.div`
 `;
 
 export const StyledContainerPage = styled.div`
- width: 100%;
+ max-width: 100%;
   padding-top: 30px;
   margin: 0 auto;
   width: 1200px;
+  @media(max-width: 1200px){
+    padding: 20px;
+}
 `;

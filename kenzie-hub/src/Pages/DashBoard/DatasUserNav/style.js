@@ -15,10 +15,9 @@ export const StyledContainerDatasUser = styled.div`
 
     @media (max-width: 1200px) {
       width: 95%;
+     
     }
-    @media (max-width: 493px) {
-      width: 90%;
-    }
+   
 
     h2 {
       font-size: 18px;

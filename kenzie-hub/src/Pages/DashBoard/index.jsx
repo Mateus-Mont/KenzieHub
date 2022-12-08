@@ -6,10 +6,34 @@ import { TechnologiesUser } from "./TechnologiesUser/index";
 import { useContext, useState } from "react";
 import { Modal } from "../../Components/Modal";
 import { DatasUserContext } from "../../Contexts";
+import { useEffect } from "react";
+import{Api} from "../../Services/api"
 
 export const DashBoard = () => {
   const [modal, setModal] = useState(false);
-  const { user } = useContext(DatasUserContext);
+ 
+  const [user, setUser] = useState([]);
+  const [techs,setTech]=useState([])
+  console.log(user);
+
+  const token = localStorage.getItem("token");
+
+  useEffect(() => {
+  
+    async function getProfile() {
+      try {
+        const response = await Api.get(`profile`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        setUser(response.data);
+        setTech(response.data.techs)
+        console.log(response);
+      } catch (erro) {
+        console.log(erro);
+      }
+    }
+    getProfile()
+  }, []);
 
   return (
     <>
@@ -19,10 +43,10 @@ export const DashBoard = () => {
         <HeaderHome />
       </StyledContainerHeader>
 
-      <DatasDashBoard />
+      <DatasDashBoard  user={user}/>
       <StyledContainerPage>
         <AddWorks setModal={setModal} />
-        <TechnologiesUser />
+        <TechnologiesUser techs={techs} />
       </StyledContainerPage>
     </>
   );

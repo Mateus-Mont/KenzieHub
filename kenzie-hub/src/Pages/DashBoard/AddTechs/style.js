@@ -4,6 +4,7 @@ export  const StyledAddWorks=styled.div`
 display:  flex;
 justify-content: space-between;
 align-items: center;
+width: 100%;
 
 h4{
     color: var(--grey-0);
@@ -17,5 +18,10 @@ button{
     height: 40px;
     font-size: 30px;
     color: var(--grey-0);
+    
+}
+
+@media(max-width: 1200px){
+
 }
 `
