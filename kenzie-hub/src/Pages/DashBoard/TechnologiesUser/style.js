@@ -41,6 +41,9 @@ export const StyledNivel = styled.div`
   p {
     color: var(--grey-1);
   }
+  img{
+    cursor: pointer;
+  }
 
 
 `;

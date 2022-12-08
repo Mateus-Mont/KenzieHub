@@ -3,10 +3,9 @@ import { DatasUserContext } from "../../Contexts";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Api } from "../../Services/api.js";
-
 import { ButtonForm } from "../ButtonForm";
 import { Input } from "../Input";
-import { useState } from "react";
+
 
 export const FormAddTechs = ({ setModal }) => {
   const { token } = useContext(DatasUserContext);

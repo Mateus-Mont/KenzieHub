@@ -4,12 +4,20 @@ import { DatasUserContext } from "../../../Contexts";
 import Vector from "../../../assets/Vector.svg";
 import { StyledCardTechnologies } from "./style";
 import { StyledNivel } from "./style";
+import { Api } from "../../../Services/api.js";
 
-export const TechnologiesUser = ({techs}) => {
+export const TechnologiesUser = ({ techs }) => {
+  const token = localStorage.getItem("token")
 
+  async function removeTech(elem) {
+    const response = await Api.delete("users/techs/" + elem.id, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
 
+    
 
-
+   return response
+  }
 
   return (
     <>
@@ -19,7 +27,7 @@ export const TechnologiesUser = ({techs}) => {
             <h4>{elem.title}</h4>
             <StyledNivel>
               <p>{elem.status}</p>
-              <img src={Vector} alt="" />
+              <img onClick={() => removeTech(elem)} src={Vector} alt="" />
             </StyledNivel>
           </StyledCardTechnologies>
         ))}
