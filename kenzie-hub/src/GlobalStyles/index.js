@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Serif+SC:wght@200&family=Nunito&family=Poppins:wght@100&display=swap');
+
 
 *{
     padding: 0;
