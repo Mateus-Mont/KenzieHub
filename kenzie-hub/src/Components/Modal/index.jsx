@@ -1,10 +1,9 @@
-
 import {
   StyledModalConteiner,
   StyledModalContent,
   StyledHeaderModal,
 } from "./style";
-import { FormAddTechs } from "./form";
+import { FormAddTechs } from "./FormModal/form";
 
 export const Modal = ({ setModal }) => {
   function closeModal() {
@@ -18,7 +17,7 @@ export const Modal = ({ setModal }) => {
           <h4>Cadastrar Tecnologia</h4>
           <button onClick={closeModal}>X</button>
         </StyledHeaderModal>
-          <FormAddTechs setModal={setModal}/>
+        <FormAddTechs setModal={setModal} />
       </StyledModalContent>
     </StyledModalConteiner>
   );

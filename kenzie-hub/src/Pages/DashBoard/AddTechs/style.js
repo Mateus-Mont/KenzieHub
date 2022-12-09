@@ -16,12 +16,12 @@ button{
     border-radius: var(--radius-1);
     width: 40px;
     height: 40px;
-    font-size: 30px;
+    font-size: 25px;
     color: var(--grey-0);
     
 }
-
 @media(max-width: 1200px){
 
 }
+
 `

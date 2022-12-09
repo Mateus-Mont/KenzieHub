@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledModalConteiner=styled.section`
+padding: 20px;
 
 position: fixed;
 justify-content: center;
@@ -43,7 +44,7 @@ form{
     background-color: var(--gry-2-opc);
     display: flex;
     flex-direction: column;
-    gap: 21px;
+    gap: 16px;
     border-radius: 0 0  var(--radius-1) var(--radius-1);
 
     button{
@@ -53,6 +54,12 @@ form{
         border: none;
         border-radius: var(--radius-1);
         font-size: 17px;
+    }
+
+    small{
+        color: var(--color-primary);
+        font-size: 12px;
+        padding: 0;
     }
 
 
@@ -71,5 +78,6 @@ select{
     color: var(--grey-0);
     padding-left: 5px;
 }
+
 
 `

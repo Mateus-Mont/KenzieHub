@@ -23,18 +23,18 @@ export const DashBoard = () => {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUser(response.data);
-        setTech(response.data.techs);
-        console.log(response);
+        setTech([...response.data.techs]);
+      
       } catch (erro) {
         console.log(erro);
       }
     }
     getProfile();
-  }, []);
+  }, [techs]);
 
   return (
     <>
-      {modal && <Modal setModal={setModal} />}
+    {modal && <Modal setModal={setModal} />}
 
       <StyledContainerHeader>
         <HeaderHome />
