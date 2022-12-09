@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const StyledModalConteiner=styled.section`
-padding: 20px;
-
 position: fixed;
+padding: 20px;
 justify-content: center;
 display: flex;
 align-items: center;
