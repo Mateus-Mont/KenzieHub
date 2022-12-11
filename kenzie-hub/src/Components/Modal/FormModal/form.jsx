@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { DatasUserContext } from "../../../Contexts";
+
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Api } from "../../../Services/api.js";
@@ -8,7 +7,8 @@ import { Input } from "../../Input";
 import { formSchema } from "./schema";
 
 export const FormAddTechs = ({ setModal }) => {
-  const { token } = useContext(DatasUserContext);
+
+  const token  = localStorage.getItem("token")
 
   const {
     register,
@@ -17,6 +17,7 @@ export const FormAddTechs = ({ setModal }) => {
   } = useForm({ resolver: yupResolver(formSchema()) });
 
   async function addTech(formData) {
+   
     try {
       const response = await Api.post("users/techs", formData, {
         headers: { Authorization: `Bearer ${token}` },

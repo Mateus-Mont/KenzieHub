@@ -7,44 +7,45 @@ import { useState } from "react";
 import { Modal } from "../../Components/Modal";
 import { useEffect } from "react";
 import { Api } from "../../Services/api";
+import { useContext } from "react";
+import { DatasUserContext } from "../../Contexts";
+import { Navigate } from "react-router-dom";
 
-export const DashBoard = () => {
+
+export const DashBoard = ({navigate}) => {
   const [modal, setModal] = useState(false);
+  const { user, loading } = useContext(DatasUserContext);
+  const token = localStorage.getItem("token")
+  
+ 
+  if(!token){
+   navigate("/")
 
-  const [user, setUser] = useState([]);
-  const [techs, setTech] = useState([]);
+  }
 
-  const token = localStorage.getItem("token");
-
-  useEffect(() => {
-    async function getProfile() {
-      try {
-        const response = await Api.get(`profile`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        setUser(response.data);
-        setTech([...response.data.techs]);
-      
-      } catch (erro) {
-        console.log(erro);
-      }
-    }
-    getProfile();
-  }, [techs]);
+  if (loading) {
+    return null;
+  }
 
   return (
     <>
-    {modal && <Modal setModal={setModal} />}
+      {modal && <Modal setModal={setModal} />}
 
-      <StyledContainerHeader>
-        <HeaderHome />
-      </StyledContainerHeader>
+      {user ? (
+        <div>
+          <StyledContainerHeader>
+            <HeaderHome navigate={navigate} />
+          </StyledContainerHeader>
 
-      <DatasDashBoard user={user} />
-      <StyledContainerPage>
-        <AddWorks setModal={setModal} />
-        <TechnologiesUser techs={techs} />
-      </StyledContainerPage>
+          <DatasDashBoard user={user} />
+          <StyledContainerPage>
+            <AddWorks setModal={setModal} />
+            <TechnologiesUser techs={""} />
+          </StyledContainerPage>
+        </div>
+      ) : (
+        <Navigate to="/" />
+      )}
     </>
   );
 };

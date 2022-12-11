@@ -1,11 +1,12 @@
 import { StyledHeaderHome } from "./style";
-import { useNavigate } from "react-router-dom";
 
-export const HeaderHome = () => {
-  const navigate = useNavigate()
+
+export const HeaderHome = ({navigate}) => {
+
   function logout(){
   window.localStorage.removeItem("token")
-    navigate("/")
+  navigate("/")
+   
 
   }
   return (

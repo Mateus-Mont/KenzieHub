@@ -2,11 +2,9 @@ import { StyledFormLogin } from "./style.js";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formSchema } from "./formSchema.js";
-import { Api } from "../../../Services/api";
-import { useNavigate } from "react-router-dom";
 import { Input } from "../../../Components/Input/index.jsx";
 import { ButtonForm } from "../../../Components/ButtonForm/index.jsx";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { DatasUserContext } from "../../../Contexts/index.jsx";
 
 export const FormLogin = () => {

@@ -4,8 +4,24 @@ import { StyledCardTechnologies } from "./style";
 import { StyledNivel } from "./style";
 import { Api } from "../../../Services/api.js";
 import { StyledDataTech } from "./style";
+import { useState } from "react";
 
-export const TechnologiesUser = ({ techs }) => {
+import { useEffect } from "react";
+
+export const TechnologiesUser = () => {
+  const [techs, setTechs] = useState([]);
+
+  useEffect(() => {
+    async function getTechs() {
+      const response = await Api.get(`profile`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      setTechs(response.data.techs);
+    }
+    getTechs();
+  });
+
   const token = localStorage.getItem("token");
 
   async function removeTech(elem) {
