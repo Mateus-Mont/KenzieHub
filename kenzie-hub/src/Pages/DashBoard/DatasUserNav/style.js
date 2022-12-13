@@ -28,6 +28,7 @@ export const StyledContainerDatasUser = styled.div`
 
     h2 {
       font-size: 18px;
+   
     }
 
     small {

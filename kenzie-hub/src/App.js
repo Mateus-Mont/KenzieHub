@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Modal } from "./Components/Modal";
 import { AuthContext } from "./Contexts";
+import { TechsContext, TechsUserContext } from "./Contexts/contextTechs";
 import { GlobalStyle } from "./GlobalStyles";
 import { DashBoard } from "./Pages/DashBoard";
 
@@ -11,7 +12,10 @@ function App() {
     <>
       <GlobalStyle />
       <AuthContext>
-      <Routes />
+        <TechsContext>
+
+          <Routes />
+        </TechsContext>
       </AuthContext>
     </>
   );

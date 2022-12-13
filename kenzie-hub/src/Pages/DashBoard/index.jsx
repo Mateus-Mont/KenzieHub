@@ -11,16 +11,13 @@ import { useContext } from "react";
 import { DatasUserContext } from "../../Contexts";
 import { Navigate } from "react-router-dom";
 
-
-export const DashBoard = ({navigate}) => {
+export const DashBoard = ({ navigate }) => {
   const [modal, setModal] = useState(false);
   const { user, loading } = useContext(DatasUserContext);
-  const token = localStorage.getItem("token")
-  
- 
-  if(!token){
-   navigate("/")
+  const token = localStorage.getItem("token");
 
+  if (!token) {
+    navigate("/");
   }
 
   if (loading) {
@@ -40,7 +37,7 @@ export const DashBoard = ({navigate}) => {
           <DatasDashBoard user={user} />
           <StyledContainerPage>
             <AddWorks setModal={setModal} />
-            <TechnologiesUser techs={""} />
+            <TechnologiesUser />
           </StyledContainerPage>
         </div>
       ) : (

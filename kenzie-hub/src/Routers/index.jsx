@@ -4,6 +4,7 @@ import { DashBoard } from "../Pages/DashBoard";
 import { Login } from "../Pages/Login";
 import { Register } from "../Pages/Register";
 import { useNavigate } from "react-router-dom";
+import { TechnologiesUser } from "../Pages/DashBoard/TechnologiesUser";
 
 export const RoutesMain = () => {
   const navigate  = useNavigate()
@@ -13,6 +14,7 @@ export const RoutesMain = () => {
       <Route>
       <Route path="home" element={<DashBoard navigate={navigate}/>}>
         <Route path=":name" element={<DashBoard navigate={navigate}/>} />
+      
       </Route>
 
       </Route>
